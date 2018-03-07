@@ -92,4 +92,14 @@ function loginCliente(){
     mysqli_close($conn);
     
 }
-    ?> 
+
+
+    function sideNavBar(){
+        print '
+                <a href="/index.html">Home</a>
+                <a href="#services">Clientes</a>
+                <a href="#contact">Contratos</a>
+                <a href="#Ayuda">Ayuda</a>
+                <a href="#Ayuda">Logout</a>';
+    }
+?> 
