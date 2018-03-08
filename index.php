@@ -1,3 +1,6 @@
+<?php
+    include 'script.php';
+?>
 <html>
     <script src="js.js"></script>
     <link rel="stylesheet" type="text/css" href="css.css">
@@ -7,9 +10,8 @@
     </head>
 
     <body>
-
-        <div class="sidenav">
-            
+        
+        <div class="sidenav">    
             <?php sideNavBar(); ?>
         </div>  
 
@@ -22,11 +24,6 @@
                 <li>Modificar/Eliminar elemento objetivo</li>
             </ul>
             
-            <?php
-                print '<p>My first PHP script!</p>'; 
-            ?>
-            
-            <?php?>
             
         </div>
 

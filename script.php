@@ -96,10 +96,11 @@ function loginCliente(){
 
     function sideNavBar(){
         print '
-                <a href="/index.html">Home</a>
-                <a href="#services">Clientes</a>
-                <a href="#contact">Contratos</a>
-                <a href="#Ayuda">Ayuda</a>
+                <a href="index.php">Home</a>
+                <a href="clientes.php">Clientes</a>
+                <a href="contratos.php">Contratos</a>
+                <a href="historial.php">Historial</a>
+                <a href="ayuda.php">Ayuda</a>
                 <a href="#Ayuda">Logout</a>';
     }
 ?> 
