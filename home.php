@@ -18,7 +18,14 @@
           
 
         <div id="main" class="main">
-            <h1>Historial</h1>
+            <h1>Hola! <?php getUserName() ?></h1>
+            <p>Historial de modificaciones</p>
+            <ul>
+                <p>Jerarquia    </p>
+                <li>Agregar elemento objetivo</li>
+                <li>Modificar/Eliminar elemento objetivo</li>
+            </ul>
+            
             
             
         </div>
