@@ -3,10 +3,10 @@ html{
     background-color: white;
 }
 h1{
-    text-align: center;
+    padding-left: 0px;
     font-family: sans-serif;
     color: cornflowerblue;
-    display: block;
+    
 }
 p{
     text-align: justify;
@@ -24,6 +24,10 @@ span{
     text-align: justify;
     font-family: sans-serif;
 }
+td{
+   text-align: center;
+}
+
 
 /*Login page*/
 
@@ -41,16 +45,21 @@ input[type=button], input[type=submit], input[type=reset]{
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 5px;
 }
-
-input[type=text], input[type=password]{
+input[type=submit]:hover{
+    background-color: lightblue;
+    color: white;
+    transition:0.5s ease;
+}
+input[type=text], input[type=password], select{
     
-    padding: 12px 20px;
+    padding: 12px 12px;
     margin: 8px 0;
     border:2px solid cornflowerblue;
     border-radius: 4px;
+    
 }
-
 .loginform p{
     text-align: right;
     padding-right: 20px;
@@ -62,6 +71,12 @@ input[type=text], input[type=password]{
 .login{
     background-color: whitesmoke;
 }
+.registerLogin input[type=submit]{
+    position: absolute;
+    right:    5%;
+    bottom:   5%;
+}
+
 
  /* The side navigation menu */
 .sidenav {
@@ -121,17 +136,127 @@ input[type=text], input[type=password]{
     bottom: 50;
     
 }
-.logoutButton{
-    background-color: skyblue!important;
+.logoutForm input[type=submit]{
+    background-color: skyblue;
+    transition:0.2s ease;
+}
+.logoutForm input[type=submit]:hover{
+    background-color: white;
+    color: skyblue;
+    transition:0.2s ease;
+}
+span{
+    background-color: white;
+    color: cornflowerblue;
+    border-color: cornflowerblue;
+    border-width: 3px;
+    background-size: 100px 100px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.5s ease;
+}
+span:hover{
+    background-color: cornflowerblue;
+    color: white;
+    background-size: 100px 100px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bolder;
+    transition: 0.2s ease;
 }
 
 
-/*Cliente page*/
-.cliente h1{
-    text-align: center;
+
+/*Table Pages*/
+.hrTitle { 
+    border-width: 2px;
+    border-color: cornflowerblue;
+} 
+
+.trTableTop td{
+    border-bottom:2px solid cornflowerblue;
 }
-.search{
-    width:290px; 
+.trTable td{
+    animation-timing-function: ease;
+    animation-name: tableAnim;
+    animation-duration: 3s;
+    border-bottom:1px solid cornflowerblue;
+}
+@keyframes tableAnim{
+    from {color: white;border-bottom:1px solid white;}
+}
+
+.trTitleTable td{
+    padding: 0 100px 0 0;
+}
+.sqlTable{
+    position: relative;
+    width: 100%;
     margin:0 auto;
-    
+    font-family: sans-serif;
+    font-size: 20;    
+}
+.trTable{
+    background-color: white;
+    transition:0.5s ease;
+}
+.trTable:hover{
+    background-color: lightblue;
+    transition:0.5s ease;
+}
+.clienteSearchButton{
+    text-align: left;
+}
+
+/*Register Form*/
+.registerHTML{
+    background-color: lightblue;
+}
+.registerForm{
+    margin:0 auto;
+    width: 400px;
+    background-color: cornflowerblue;
+    border-radius: 40px;
+    padding: 40px;
+}
+.registerForm h1{
+    color: white;
+}
+.registerTable{
+    width: 300px;
+    border-color: lightblue;
+}
+.registerForm p{
+    padding-right: 10px;
+    text-align: center;
+    color: white;
+}
+.registerTable input[type=text]{
+    width: 300px;
+}
+.registerTable input[type=password]{
+    width: 300px;
+}
+.registerTable input[type=submit]{
+    width: 300px;
+    color: cornflowerblue;
+    background-color: white;
+    font-weight: bolder;
+    font-family: sans-serif;
+    border-radius: 15px;
+    padding: 15px;
+    transition:0.5s ease;
+}
+.registerTable input[type=submit]:hover{
+    background-color: lightblue;
+    color: white;
+    transition:0.5s ease;
+}
+.registerTable p{
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.registerTable input[type=checkbox]{
+    resize: 10px 10px;
 }

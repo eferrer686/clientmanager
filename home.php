@@ -1,5 +1,5 @@
 <?php
-    include 'script.php';
+    include 'homePHP.php';
 ?>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
