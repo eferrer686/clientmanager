@@ -86,7 +86,7 @@ function sqlSearch(){
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       }
     
-    $sql="SELECT * FROM ".$sqlFrom." where ".$searchMethod." like '%".$searchText."%' and idUser = ".$_SESSION['idUser'];
+    $sql="SELECT * FROM ".$sqlFrom." where ".$searchMethod." like '".$searchText."%' and idUser = ".$_SESSION['idUser'];
     
     $result = mysqli_query($con,$sql);
     
@@ -108,7 +108,6 @@ function tableClientes(){
         </td><td>Genero
         </td></tr>
         
-        
          "; 
     if (isset($_SESSION['searchMethod'])){
         $searchMethod=$_SESSION['searchMethod'];
@@ -121,8 +120,8 @@ function tableClientes(){
     if($result != null){
         while($row = mysqli_fetch_array($result))
           {
-            echo      
-             "<tr class='trTable'><td>" . $row['idPersona'] . 
+            echo"
+            <tr class='trTable'><td class='idPersona'>" . $row['idPersona'] . 
             "</td><td>" . $row['nombre'] .
              "</td><td>" . $row['estadoCivil'] .
              "</td><td>" . $row['edad'] .

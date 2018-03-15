@@ -3,8 +3,8 @@
 ?>
 <html class="cliente">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script src="js.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <head>
@@ -52,6 +52,9 @@
             <div class="searchTable">
                 <?php    tableClientes();   ?>
             </div>
+            <form id="trFormHidden" method="post" action="clientes.php">
+                <input name="idPersona" type="hidden" value="" id="trFormHiddenID">
+            </form>
         </div>
 
 
