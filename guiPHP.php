@@ -30,6 +30,7 @@ function logout(){
 //Create sideNavBar menu
 function sideNavBar(){
     print '
+        <title>Mea Lorem</title>
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="home.php">Home</a>
@@ -43,7 +44,7 @@ function sideNavBar(){
             </form>
         </div>
 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="menuOpenButton">&#9776;</span>
         ';
 }
 

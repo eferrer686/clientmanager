@@ -10,6 +10,10 @@
     $sqlFrom='';
     $searchText='';
     $searchMethod='nombre';
+    $updateName='';
+    $updateValue='';
+    $tableID='';
+    $idTuple='';
 
 if (!isset($_SESSION["user"])){
     session_start(['cookie_lifetime' => 10800,]);
@@ -87,11 +91,16 @@ function sqlSearch(){
       }
     
     $sql="SELECT * FROM ".$sqlFrom." where ".$searchMethod." like '".$searchText."%' and idUser = ".$_SESSION['idUser'];
+    //echo $sql;
     
     $result = mysqli_query($con,$sql);
     
+    
 
 }
+
+
+
 function tableClientes(){
     global $servername, $username, $password, $dbname, $user, $pwd, $searchMethod, $searchText, $sqlFrom, $result,$con,$row;
     
@@ -106,6 +115,7 @@ function tableClientes(){
         </td><td>Fecha de Nacimiento
         </td><td>Potencial
         </td><td>Genero
+        </td><td>Visita Programada
         </td></tr>
         
          "; 
@@ -128,6 +138,7 @@ function tableClientes(){
             "</td><td>" . $row['fNacimiento'] .
              "</td><td>" . $row['potencial'] .
              "</td><td>" . $row['genero'] .
+             "</td><td>" . $row['visita'] .
              "</td></tr> ";  //$row['index'] the index here is a field name 
 
           }
@@ -187,4 +198,26 @@ function tableContratos(){
     
     mysqli_close($con);
 }
+
+//Update and Delete
+function sqlUpdate(){
+    
+    global $servername, $username, $password, $dbname, $user, $pwd, $searchMethod, $searchText, $sqlFrom, $result,$con,$row,$updateName,$updateValue,$tableID,$idTuple;
+    
+    $con = mysqli_connect($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+    
+    $sql = "UPDATE ".$sqlFrom." SET ".$updateName."='".$updateValue."' WHERE ".$tableID."= ".$idTuple."";
+    $result = mysqli_query($con,$sql);
+    
+    
+
+}
+
+
 ?>
