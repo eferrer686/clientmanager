@@ -302,6 +302,46 @@ function residenciasCliente(){
     echo"</table>";
     
 }
+function contratosCliente(){
+    global $servername, $username, $password, $dbname, $user, $pwd, $searchMethod, $searchText, $sqlFrom, $result,$con,$row,
+    
+    $idCliente;
+    
+    $sqlFrom = 'contratos';
+    $searchMethod = 'idPersona';
+    $searchText = $idCliente;
+    
+    echo '<table class="sqlTable">';
+    echo      
+        "<tr class='trTableTop'><td>ID
+        </td><td>Nombre
+        </td><td>Fecha Vencimiento
+        </td><td>Fecha de Adquisición
+        </td><td>Fecha de Pago
+        </td></tr>    
+         "; 
+    
+    sqlSearch(); //Query into $Result variable
+    
+    if($result != null){
+        while($row = mysqli_fetch_array($result))
+          {
+            echo      
+             "<tr class='trTable'><td>" . $row['idContrato'] .
+                "</td><td>" . $row['nombre'] .
+                "</td><td>" . $row['fVencimiento'] .
+                "</td><td>" . $row['fAdquisicionInicial'] .
+                "</td><td>" . $row['fPago'] .
+             "</td></tr> ";  //$row['index'] the index here is a field name 
+
+          }
+    }
+    else{
+        unset($_SESSION['searchMethod']);
+    }
+    echo"</table>";
+    
+}
 
 
 ?>

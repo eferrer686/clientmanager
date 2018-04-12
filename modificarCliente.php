@@ -104,10 +104,9 @@
                     </td>
                 </tr>
                 <tr>
-                    
                     <td colspan="4" class="contratosCliente">
                         <h1 class="h1Mod">Contratos</h1>
-                        <? php tablaContratosCliente(); ?>
+                        <?php contratosCliente(); ?>
                         <form action="modificarCliente.php" method="post">
                             <input type="submit" value="Modificar" name="modContratosCliente">
                         </form>
