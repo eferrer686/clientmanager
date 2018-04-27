@@ -21,10 +21,24 @@ if(isset($_POST['add'])){
 if(isset($_POST['idPersona'])){
     modCliente();
 }
+if(isset($_POST['idResidencia'])){
+    modResidencia();
+}
+if(isset($_POST['idRelativo'])){
+    $_SESSION['idPersona']=$_POST['idRelativo'];
+}
 if(isset($_POST['modificarClienteButton'])){
     updateAllCliente();
 }
+if(isset($_POST['addResidenciasCliente'])){
+    addResidenciasCLiente();
+}
 
+function addResidenciasCliente(){
+    $_SESSION['idResidencia']='n';
+    header("Location: /clientmanager/modificarResidencia.php");
+    
+}
 function addCliente(){
     $_SESSION['idPersona']='n';
     header("Location: /clientmanager/modificarCliente.php");
@@ -76,6 +90,7 @@ function searchClienteByID(){
     
     
 }
+
 function printNombreCliente(){
     searchClienteByID();
     global $nombreCliente; 
@@ -154,7 +169,7 @@ function updateNombre(){
 }
 function updateEstadoCivil(){
     global $sqlFrom,$updateName,$updateValue,$tableID,$idTuple;
-    global $estadoCivil, $idCliente, $tableID;
+    global $estadoCivil, $idCliente;
     $tableID= 'idPersona';
     $idTuple= $_SESSION['idPersona'];
     $sqlFrom= 'persona';
@@ -237,7 +252,8 @@ function relacionesCliente(){
     
     echo '<table class="sqlTable">';
     echo      
-        "<tr class='trTableTop'><td>Nombre
+        "<tr class='trTableTop'><td>ID
+        </td><td>Nombre
         </td><td>Relación
         </td></tr>    
          "; 
@@ -248,7 +264,8 @@ function relacionesCliente(){
         while($row = mysqli_fetch_array($result))
           {
             echo      
-             "<tr class='trTable'><td>" . $row['Relativo'] . 
+             "<tr class='trTableRelaciones'><td class='idRelativo'>" . $row['idRelativo'] . 
+             "</td><td>" . $row['Relativo'] .
              "</td><td>" . $row['tipo'] .
              "</td></tr> ";  //$row['index'] the index here is a field name 
 
@@ -271,7 +288,8 @@ function residenciasCliente(){
     
     echo '<table class="sqlTable">';
     echo      
-        "<tr class='trTableTop'><td>Calle
+        "<tr class='trTableTop'><td>ID
+        </td><td>Calle
         </td><td>Interior
         </td><td>Exterior
         </td><td>Colonia
@@ -286,13 +304,14 @@ function residenciasCliente(){
         while($row = mysqli_fetch_array($result))
           {
             echo      
-             "<tr class='trTable'><td>" . $row['calle'] .
+             "<tr class='trTableResidencias'><td class='idResidencia'>" . $row['idResidencia'] .
+             "</td><td>" . $row['calle'] .
                 "</td><td>" . $row['numeroInterior'] .
                 "</td><td>" . $row['numeroExterior'] .
                 "</td><td>" . $row['colonia'] .
                 "</td><td>" . $row['pais'] .
                 "</td><td>" . $row['especificaciones'] .
-             "</td></tr> ";  //$row['index'] the index here is a field name 
+             "</td></tr> ";
 
           }
     }
@@ -342,6 +361,9 @@ function contratosCliente(){
     echo"</table>";
     
 }
-
+function modResidencia(){
+    $_SESSION['idResidencia']=$_POST['idResidencia'];
+    header("Location: /clientmanager/modificarResidencia.php");
+}
 
 ?>

@@ -3,7 +3,7 @@
 ?>
 <html class="cliente">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -14,7 +14,12 @@
         <?php sideNavBar(); ?>
         <?php searchClienteByID(); ?>
         <div id="main" class="main">
-            <h1>Clientes</h1>
+            <table class="titleTable">
+                <tr class="trTitleTable"><td>
+                    <a class="titlePage" href="clientes.php"><h1>Clientes</h1></a>
+                    </td>
+                </tr>
+            </table>
         <div class="modificarClientes">
             <table class="modificarClientesTable">
                 <tr>
@@ -90,7 +95,7 @@
                         <h1 class="h1Mod">Residencias</h1>
                         <?php residenciasCliente(); ?>
                         <form action="modificarCliente.php" method="post">
-                            <input type="submit" value="Modificar" name="modResidenciasCliente">
+                            <input type="submit" value="Nuevo" name="addResidenciasCliente">
                         </form>
                     </td>
                     <td colspan="2" class="relacionesCliente">
@@ -99,7 +104,7 @@
                             <?php    relacionesCliente();   ?>
                         </div>
                         <form action="modificarCliente.php" method="post">
-                            <input type="submit" value="Modificar" name="modRealacionesCliente">
+                            <input type="submit" value="Nuevo" name="addRealacionesCliente">
                         </form>
                     </td>
                 </tr>
@@ -108,13 +113,19 @@
                         <h1 class="h1Mod">Contratos</h1>
                         <?php contratosCliente(); ?>
                         <form action="modificarCliente.php" method="post">
-                            <input type="submit" value="Modificar" name="modContratosCliente">
+                            <input type="submit" value="Nuevo" name="addContratosCliente">
                         </form>
                     </td>
                 </tr>
             </table>
         </div>
+            <form id="trFormHiddenResidencias" method="post" action="modificarCliente.php">
+                <input name="idResidencia" type="hidden" value="" id="trFormHiddenResidenciasID"></form>
+            <form id="trFormHiddenClientes" method="post" action="modificarCliente.php">
+                <input name="idRelativo" type="hidden" value="" id="trFormHiddenRelativo">
+            </form>
         </div>
+       
     </body>
     
 

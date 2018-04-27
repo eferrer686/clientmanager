@@ -21,7 +21,7 @@
             <div class="search">
                 <table class="titleTable">
                 <tr class="trTitleTable"><td>
-                    <h1>Clientes</h1>
+                    <a class="titlePage" href="clientes.php"><h1>Clientes</h1></a>
                 </td>
                 <td>
                     <form action="clientes.php" method="post">    

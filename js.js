@@ -1,11 +1,21 @@
 $(document).ready(function() {
-    $(".trTable").click(function(){
-       var id = $(this).find(".idPersona").text();
-        $("#trFormHiddenID").val(id);
+    $(".trTableClientes").click(function(){
+       var idPersona = $(this).find(".idPersona").text();
+        $("#trFormHiddenID").val(idPersona);
         $("#trFormHidden").submit();
      });
-}); 
 
+    $(".trTableResidencias").click(function(){
+       var idResidencia = $(this).find(".idResidencia").text();
+        $("#trFormHiddenResidenciasID").val(idResidencia);
+        $("#trFormHiddenResidencias").submit();
+     });
+    $(".trTableRelaciones").click(function(){
+       var idRelativo = $(this).find(".idRelativo").text();
+        $("#trFormHiddenRelativo").val(idRelativo);
+        $("#trFormHiddenClientes").submit();
+     });
+});
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {

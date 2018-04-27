@@ -131,7 +131,7 @@ function tableClientes(){
         while($row = mysqli_fetch_array($result))
           {
             echo"
-            <tr class='trTable'><td class='idPersona'>" . $row['idPersona'] . 
+            <tr class='trTableClientes'><td class='idPersona'>" . $row['idPersona'] . 
             "</td><td>" . $row['nombre'] .
              "</td><td>" . $row['estadoCivil'] .
              "</td><td>" . $row['edad'] .
