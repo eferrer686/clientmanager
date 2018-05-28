@@ -138,7 +138,7 @@ function tableClientes(){
             "</td><td>" . $row['fNacimiento'] .
              "</td><td>" . $row['potencial'] .
              "</td><td>" . $row['genero'] .
-             "</td><td>" . $row['visita'] .
+             "</td><td>" . $row['fVisita'] .
              "</td></tr> ";  //$row['index'] the index here is a field name 
 
           }

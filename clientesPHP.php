@@ -81,7 +81,7 @@ function searchClienteByID(){
             $fNacimiento= $row['fNacimiento'];
             $potencial = $row['potencial'];
             $genero = $row['genero'];
-            $visita = $row['visita'];
+            $visita = $row['fVisita'];
           }
         
     } else{
